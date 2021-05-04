@@ -4,9 +4,9 @@ var io = require('socket.io')(http);
 // console.log(io);
 io.on('connection',(socket)=>{
     console.log('client connection received');
-socket.emit('SendToClient: ',{hello:'hello world'});
+    socket.emit('sendToClient', {hello:'world'});
 
-socket.on('ReceivedFromClient', (data)=>{
+socket.on('receivedFromClient', (data)=>{
     console.log(data);
 })
 

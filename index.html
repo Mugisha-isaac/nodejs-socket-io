@@ -9,7 +9,12 @@
 <body>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        const Socket = io()
+        var socket = io()
+        socket.on('sendToClient',(data)=>{
+            console.log("HELO")
+            console.log(data);
+            socket.emit('receivedFromClient', {my:'data'});
+        })
     </script>
 </body>
 </html>
